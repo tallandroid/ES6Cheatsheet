@@ -1,0 +1,128 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Es6cheatsheet by tallandroid</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/github-light.css">
+    <meta name="viewport" content="width=device-width">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Es6cheatsheet</h1>
+        <p>CheatSheet for learning ES6 from MDN</p>
+
+        <p class="view"><a href="https://github.com/tallandroid/ES6Cheatsheet">View the Project on GitHub <small>tallandroid/ES6Cheatsheet</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/tallandroid/ES6Cheatsheet/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/tallandroid/ES6Cheatsheet/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/tallandroid/ES6Cheatsheet">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a id="es6cheatsheet" class="anchor" href="#es6cheatsheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ES6Cheatsheet</h1>
+
+<p>CheatSheet creates from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a>.</p>
+
+<h1></h1>
+
+<h3>
+<a id="rest-parameters" class="anchor" href="#rest-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rest Parameters</h3>
+
+<ul>
+<li>Remove the boilerplate code:</li>
+</ul>
+
+<pre><code>function x(a,b,c){
+ var args = Array.prototype.slice.call(arguments);
+
+}
+</code></pre>
+
+<p>Consume like this :</p>
+
+<pre><code>function x(...thisArgs){
+ console.log(...thisArgs instanceof Array); //true
+ }
+</code></pre>
+
+<p><em>Note: Not implemented in Chrome yet - Lookup browser compatibility</em></p>
+
+<h3>
+<a id="lazy-getters" class="anchor" href="#lazy-getters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Lazy getters</h3>
+
+<p>Allows you to execute a custom procedure when the property is accessed. Optimized to <strong>memoize</strong> the value calculated(<strong>Maybe only Gecko</strong>)</p>
+
+<pre><code>var obj = {
+  get a():{
+    console.log("hoodibaba");
+  },
+  get service():{
+    return new function(){
+      //not sure how the scope wil work here    
+    }
+  },
+  get [expr]:{
+    //properties can be evaluated as an expression too
+  }
+}
+//obj.a = hoodibaba
+//obj.service = //no idea
+</code></pre>
+
+<h1></h1>
+
+<h3>
+<a id="setters" class="anchor" href="#setters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Setters</h3>
+
+<p>Not sure if they will find any use. Looking for a possible use cases. </p>
+
+<h1></h1>
+
+<h3>
+<a id="function-declaration-vs-function-expression-vs-function-constructor" class="anchor" href="#function-declaration-vs-function-expression-vs-function-constructor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Function declaration vs Function expression vs Function constructor</h3>
+
+<ul>
+<li>
+<strong>Function declaration</strong>
+<code>function foo(){}</code>
+</li>
+<li>
+<strong>Function expression</strong> 
+<code>var x = function foo(){}</code>
+</li>
+<li>function expression creates a closure vs <em>Function</em> inherits only global scope</li>
+<li>function declaration and function expression are parsed only once</li>
+<li>function expression gives you a way to create private functions</li>
+<li>declaration and expression can be used interchangeable as apart from hoisting , I dont see any difference. <strong>Need verification</strong>
+</li>
+</ul>
+
+<h1></h1>
+
+<h3>
+<a id="tbd" class="anchor" href="#tbd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TBD</h3>
+
+<ul>
+<li>Arrow functions</li>
+<li>Default parameters</li>
+</ul>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/tallandroid">tallandroid</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
