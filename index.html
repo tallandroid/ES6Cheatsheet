@@ -1,42 +1,35 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en-us">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta charset="UTF-8">
     <title>Es6cheatsheet by tallandroid</title>
-
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/github-light.css">
-    <meta name="viewport" content="width=device-width">
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Es6cheatsheet</h1>
-        <p>CheatSheet for learning ES6 from MDN</p>
+    <section class="page-header">
+      <h1 class="project-name">Es6cheatsheet</h1>
+      <h2 class="project-tagline">CheatSheet for learning ES6 from MDN</h2>
+      <a href="https://github.com/tallandroid/ES6Cheatsheet" class="btn">View on GitHub</a>
+      <a href="https://github.com/tallandroid/ES6Cheatsheet/zipball/master" class="btn">Download .zip</a>
+      <a href="https://github.com/tallandroid/ES6Cheatsheet/tarball/master" class="btn">Download .tar.gz</a>
+    </section>
 
-        <p class="view"><a href="https://github.com/tallandroid/ES6Cheatsheet">View the Project on GitHub <small>tallandroid/ES6Cheatsheet</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/tallandroid/ES6Cheatsheet/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/tallandroid/ES6Cheatsheet/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/tallandroid/ES6Cheatsheet">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
+    <section class="main-content">
+      <h1>
 <a id="es6cheatsheet" class="anchor" href="#es6cheatsheet" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ES6Cheatsheet</h1>
 
-<p>CheatSheet creates from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a>.</p>
+<p>CheatSheet created from <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide">MDN</a>.</p>
 
 <h1></h1>
 
 <h2>
 <a id="functions" class="anchor" href="#functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Functions</h2>
+
+<p><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions">Reference</a></p>
 
 <h3>
 <a id="rest-parameters" class="anchor" href="#rest-parameters" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Rest Parameters</h3>
@@ -108,25 +101,68 @@
 <li>function expression gives you a way to create private functions</li>
 <li>declaration and expression can be used interchangeable as apart from hoisting , I dont see any difference. <strong>Need verification</strong>
 </li>
+<li>in strict mode starting with es6 , the block level functions are restricted to that block only. Dont use non-strict mode with es6.</li>
 </ul>
 
 <h1></h1>
 
 <h3>
-<a id="tbd" class="anchor" href="#tbd" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>TBD</h3>
+<a id="arrow-functions" class="anchor" href="#arrow-functions" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Arrow functions</h3>
 
 <ul>
-<li>Arrow functions</li>
-<li>Default parameters</li>
-<li>Generator function</li>
+<li>The most awesome feature ever! </li>
+<li>Removes the pain of this</li>
+<li>Jargonly - arrow functions get executed in the enclosing scope . They dont have a new scope.</li>
 </ul>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/tallandroid">tallandroid</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+
+<pre><code>$("randomeElement").click(function(event){
+  //some random shit here
+});
+</code></pre>
+
+<p>can be replaced with </p>
+
+<p><code>$("randomElement").click(event =&gt; //some random shit here)</code></p>
+
+<ul>
+<li>
+<strong>Catch</strong>
+
+<ul>
+<li>multiple parameters should be enclosed in brackets</li>
+</ul>
+
+<pre><code>((x, y, z) =&gt; a)
+</code></pre>
+
+<ul>
+<li>if function is a block , it should have an explicit return statement</li>
+<li>if function returns an empty object , it should be enclosed in brackets</li>
+</ul>
+
+<pre><code>x =&gt; ({})
+</code></pre>
+</li>
+<li>
+<strong>Thumbrule</strong>
+
+<ul>
+<li>use function expression or declaration for methods callable using <code>object.method()</code> way</li>
+<li>for everything else , use arrow functions(THIS IS AWESOME!!!)</li>
+</ul>
+</li>
+</ul>
+
+<h1></h1>
+
+      <footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/tallandroid/ES6Cheatsheet">Es6cheatsheet</a> is maintained by <a href="https://github.com/tallandroid">tallandroid</a>.</span>
+
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a>.</span>
       </footer>
-    </div>
-    <script src="javascripts/scale.fix.js"></script>
-    
+
+    </section>
+
+  
   </body>
 </html>
